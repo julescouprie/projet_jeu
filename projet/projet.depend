@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1711881013 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet\affichage_jeu.c
+
+1711880783 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet\main.c
+
+1711877974 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet\fonction_utile.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+	<locale.h>
+
+1711815897 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet\personnages.c
+
+1711827839 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet\fonction_bonus.c
+
