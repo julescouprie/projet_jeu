@@ -14,3 +14,24 @@
 
 1711827839 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet\fonction_bonus.c
 
+1711914699 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet_jeu\projet_jeu\projet\fonction_bonus.c
+
+1712259271 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet_jeu\projet_jeu\projet\fonction_utile.c
+	<stdio.h>
+	<stdlib.h>
+	<windows.h>
+	<time.h>
+	<locale.h>
+
+1712307158 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet_jeu\projet_jeu\projet\main.c
+
+1712339902 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet_jeu\projet_jeu\projet\personnages.c
+
+1712303664 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet_jeu\projet_jeu\projet\affichage_jeu.c
+	<stdio.h>
+	<stdlib.h>
+
+1712307156 source:c:\users\jules couprie\onedrive\bureau\code blocks\projet_jeu\projet_jeu\projet\déplacement.c
+	<stdlib.h>
+	<stdio.h>
+

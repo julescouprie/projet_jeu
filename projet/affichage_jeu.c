@@ -1,4 +1,7 @@
-#define LON 8
+#include <stdio.h>
+#include <stdlib.h>
+
+#define LON 4
 #define LAR 12
 
 // debut du jeu
@@ -8,7 +11,7 @@ void lecture_choix_debut(int *choix);
 void lecture_reponse_regles(int *reponse_regles);
 void affichage_regles();
 
-//h�ros et arm�e
+//heros et armee
 void presentation_heros();
 void presentation_armee();
 void nom_joueur1();
@@ -17,7 +20,7 @@ void lecture_nom_joueur1(int *nom_joueur1);
 void lecture_nom_joueur2(int *nom_joueur2);
 
 //affichage plateau et pieces
-void plateau_vide();
+void dessiner_plateau_vide(int ligne, int colonne);
 
 
 // debut du jeu
@@ -87,31 +90,58 @@ void lecture_nom_joueur_2(int *nom_joueur2)
     scanf("%s", nom_joueur2);
 }
 
-//plateau/pieces
 
-void initialiser_plateau(int *plateau[13][8])
+void dessiner_plateau_vide(int ligne, int colonne)
 {
-    for (int i=0; i < 13 ; i++)
+
+    //tableau jjoueur 1
+    int i;
+    int j;
+    dessiner_rectangle(ligne-1,colonne-2,4,8*LON+2,8*LAR+4);    //dessiner le fond de l'echiquier
+
+    int nbLignes = 7;
+    int nbColonnes = 8;
+
+    int tab_joueur1[7][8] =
     {
-        for (int j=0; j < 8 ; j++)
+        {15 ,15, 15 ,15 ,15 ,15 ,15 , 15},  // ligne de fond pour compter les pv du heros
+        {7 ,14,7 ,14,7 ,14, 7,14},
+        {14,7 ,14,7 ,14,7 ,14, 7},
+        {7 ,14,7 ,14,7 ,14, 7,14},
+        {14,7 ,14,7 ,14,7 ,14, 7},
+        {7 ,14,7 ,14,7 ,14, 7,14},
+        {14,7 ,14,7 ,14,7 ,14, 7},
+    };                                                          //crée un quadrillage de couleur gris clair et jaune
+//====================================Reproduction du tableau==========================================================================
+    for (i = 0; i < nbLignes; i++)
+    {
+        for (j = 0; j < nbColonnes; j++)
         {
-            *plateau[i][j]=0;
+            dessiner_rectangle(ligne + LON*i ,colonne + LAR*j,tab_joueur1[i][j],LON,LAR);   //dessine une case en fonction du tableau et des positions entrées
         }
     }
-}
 
-void dessiner_plateau(int ligne, int colonne, int color, int lg, int la, int plateau[13][8])
-{
-    for (int i = 0; i < 13; i++)
+    //tableau joueur 2
+
+    dessiner_rectangle(ligne-1,colonne-2,4,8*LON+2,8*LAR+4);    //dessiner le fond du plateau
+
+    int tab_joueur2[7][8] =
     {
-        for (int j = 0; j < 8; j++)
+        {7 ,14,7 ,14,7 ,14, 7,14},
+        {14,7 ,14,7 ,14,7 ,14, 7},
+        {7 ,14,7 ,14,7 ,14, 7,14},
+        {14,7 ,14,7 ,14,7 ,14, 7},
+        {7 ,14,7 ,14,7 ,14, 7,14},
+        {14,7 ,14,7 ,14,7 ,14, 7},
+        {15 ,15 ,15 ,15 ,15 ,15 ,15 , 15},  // ligne de fond pour compter les pv du heros
+
+    };                                                          //crée un quadrillage de couleur gris clair et jaune
+//====================================Reproduction du tableau==========================================================================
+    for (i = 0; i < nbLignes; i++)
+    {
+        for (j = 0; j < nbColonnes; j++)
         {
-            if (plateau[i][j] == 0)
-            {
-                plateau[i][j] = dessiner_rectangle(i, j, 15, LON, LAR);
-            }
-            printf("%d", plateau[i][j]); // Afficher la valeur de la case
+            dessiner_rectangle((ligne+7) + LON*i ,colonne + LAR*j,tab_joueur2[i][j],LON,LAR);   //dessine une case en fonction du tableau et des positions entrées
         }
-        printf("\n");
     }
 }

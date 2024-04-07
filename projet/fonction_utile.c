@@ -65,34 +65,21 @@ void positionner_curseur(int ligne, int colonne)
     SetConsoleCursorPosition(hStdout, pos);
 }
 
-
-/*
-void dessiner_rectangle(int ligne,int colonne, int c, int lg, int la)
+void dessiner_rectangle(int ligne,int colonne,int c,int lg,int la)
 {
-    for (int i=0; i<la; i++){
-        for (int j=0; j<lg; j++){
-            positionner_curseur(i+colonne,j+ligne);
-            color(c,0);
-            printf("%c",219);
+    int i;
+    int j;
+    for (i = ligne ; i < ligne + lg; i++)
+    {
+        for (j = colonne ; j < colonne + la; j++)
+        {
+            positionner_curseur(i, j);
+            color(c,c);
+            printf(" ");
         }
     }
-    color(15,0);
-}*/
 
-void dessiner_rectangle(int ligne, int colonne, int c, int lg, int la) {
-    int i, j;
-    color(c, 0); // Définir la couleur du rectangle
-    for (i = 0; i < lg; i++) {
-        positionner_curseur(ligne + i, colonne); // Utiliser la position correcte de la ligne
-        for (j = 0; j < la; j++) {
-            printf("%c", 219); // Afficher le caractère de rectangle
-        }
-        printf("\n");
-    }
-    color(15, 0); // Réinitialiser la couleur après le dessin du rectangle
 }
-
-
 
 void effacer_console() {
     system("cls"); // Cette commande efface la console sous Windows

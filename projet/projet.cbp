@@ -34,6 +34,9 @@
 		<Unit filename="affichage_jeu.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="déplacement.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="fonction_bonus.c">
 			<Option compilerVar="CC" />
 		</Unit>
